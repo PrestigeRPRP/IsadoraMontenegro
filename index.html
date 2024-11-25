@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Isadora Montenegro</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./index.css">
+        <link rel="icon" href="./resource/shivi.jpeg">
+
+      
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <a href="#" class="start" tabindex="0">
+                <img class="start" src="./resource/koala1.png" alt="🐨">
+            </a>
+        
+            <div class="secret_message" 
+         data-text="<p>Isadora Montenegro</p>
+                             <p>Mula sayong pag daong hanggang tumagal</p>
+                             <p>Sa aking isipan ay hindi ka na matanggal</p>
+                             <p>Araw gabi ay nasa isip ka tila ba ko hangal</p>
+                             <p>Iniisip na ikaw ang sagot kahit di naman nag dasal</p> <br>
+
+                             <p>Mula ng ikaw ay dumaong, pananaw ko ay nagiba</p>
+                             <p>Kapag nakakausap ka ako'y nagkakasigla</p>
+                             <p>Ngiti mong kay tamis at maamong mukha</p>
+                             <p>Tinig mong mala anghel ako'y napapatulala</p> <br>
+
+                             <p>Mula ng ika'y dumaong, naisip nang mag seryoso</p>
+                             <p>Kahit di maganda pakiramdam damdamin ko’y bumugso</p>
+                             <p>Ako’y pumayag nung niyakag mo ko na mag troso</p>
+                             <p>At don na nag simula ang istorya nating ito</p> <br>
+
+                             <p>Mula nong ika’y dumaong, ay nalaman ko na</p>
+                             <p>Ayoko sa iba nininais ko’y ikaw talaga </p>
+                             <p>Kaya binibini huwag kang mag alala </p>
+                             <p>Hinding hindi nako titingin pa sa iba </p> <br>
+
+                             <p>Mula nong ika’y dumaong at noong tumagal</p>
+                             <p>Ako sayo’y napalapit at napamahal</p>
+                             <p>Inipon lahat ng aking tapang at sa’yo sumugal </p>
+                             <p>Hanggang dumating yung araw na tinawag mo kong mahal</p> <br>
+
+                             <p>Isadora Montenegro, sa’yo ako’y na ngangako</p>
+                             <p>Na kahit san man mapunta ako’y di magbabago</p>
+                             <p>Kahit sang mundo, sa globo o kahit anong bayan </p>
+                             <p>Ako ay ikaw, ikaw ay ako at ikaw ang aking tahanan</p> <br>
+
+                             <p>Nang dahil sa’yo ako’y buong buo. Mahal Kita</p>
+
+
+                             <div align='right'><strong>-- Rajah</strong></div>">
+                Mensahe para sayo.
+               
+            </div>
+            
+           
+
+           
+        </div>
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+    </script>
+
+    <script>
+    var running = false;
+        function typeWriter(text, n) {
+            if (n < (text.length)) {
+                $('.secret_message').html(text.substring(0, n + 1) + "<img class='heart' src='./resource/heart3.svg' alt='❤'>");
+                n++;
+                setTimeout(function () {
+                    typeWriter(text, n)
+                }, 100);
+            }
+            else {
+                running = false;
+            }
+        }
+
+        $('.start').click(function (e) {
+            e.stopPropagation();
+            if (running == false) {
+                var text = $('.secret_message').data('text');
+                running = true;
+                typeWriter(text, 0);
+            }
+        });
+
+    // Create an audio object
+const audio = new Audio('Musik.mp3'); // Ensure the path to your audio file is correct
+// Set the volume to 0.2 (20%)
+audio.volume = 0.2;
+// Function to play audio
+function playAudio() {
+    audio.play().catch(error => {
+        console.error("Audio playback failed:", error);
+        // If autoplay fails, show a message or provide a button for user interaction
+        alert("Click anywhere to play audio.");
+    });
+}
+
+// Event listener for user interaction to allow audio playback
+document.addEventListener('click', () => {
+    if (audio.paused) {
+        playAudio();
+    }
+});
+
+// Call the playAudio function on page load
+document.addEventListener('DOMContentLoaded', () => {
+    playAudio();
+});
+
+    </script>
+     
+     
+
+<script src="./index.js"></script>
+</body>
+</html>
+
